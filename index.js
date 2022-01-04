@@ -1,30 +1,21 @@
 // Code your solution here
 
 
-function findMatching(array){
-    let newArray = array.filter(drivers => drivers == array)
+function findMatching(listOfNames, nameInput){
+    let newArray = listOfNames.filter(driver => driver.toLowerCase() === nameInput.toLowerCase())
     return newArray
 }
 
-// function findMatchingFilter(array){
-//     let newArray = filter(array, function(drivers) {
-//         return array == drivers
-//     });
-//     return newArray
-// }
-
-// function findMatching(arrayOfDrivers){
-//     function conditional(array){
-        
-//     }
-//     let result = array.map(conditional)
-//         return result
-// }
-
-function fuzzyMatch(arrayOfObjects){
-    let newArray = []
+function fuzzyMatch(listOfNames, nameInput){
+    let newArray = listOfNames.filter(driver => {
+        return driver.slice(0, nameInput.length).toLowerCase() === nameInput.toLowerCase()
+    })
+    return newArray
 }
 
-function matchName(arrayOfObjects){
-    let newArray = []
+function matchName(listOfNames, nameInput){
+    let newArray = listOfNames.filter(list => {
+        return list.name === nameInput
+    })
+    return newArray
 }
